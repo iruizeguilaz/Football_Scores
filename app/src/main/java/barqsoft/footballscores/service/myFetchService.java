@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.Vector;
 
+import barqsoft.footballscores.App;
 import barqsoft.footballscores.DatabaseContract;
 import barqsoft.footballscores.R;
 
@@ -30,7 +31,7 @@ import barqsoft.footballscores.R;
  */
 public class myFetchService extends IntentService
 {
-    public final String LOG_TAG = this.getString(R.string.myFetchService);
+    public final String LOG_TAG = myFetchService.class.getName();
     public myFetchService()
     {
         super("myFetchService");
@@ -48,8 +49,8 @@ public class myFetchService extends IntentService
     private void getData (String timeFrame)
     {
         //Creating fetch URL
-        final String BASE_URL = this.getString(R.string.myFetchService_baseURL); //Base URL
-        final String QUERY_TIME_FRAME = this.getString(R.string.myFetchService_timeFrame); //Time Frame parameter to determine days
+        final String BASE_URL = App.getContext().getString(R.string.myFetchService_baseURL); //Base URL
+        final String QUERY_TIME_FRAME = App.getContext().getString(R.string.myFetchService_timeFrame); //Time Frame parameter to determine days
         //final String QUERY_MATCH_DAY = "matchday";
 
         Uri fetch_build = Uri.parse(BASE_URL).buildUpon().
@@ -63,7 +64,7 @@ public class myFetchService extends IntentService
             URL fetch = new URL(fetch_build.toString());
             m_connection = (HttpURLConnection) fetch.openConnection();
             m_connection.setRequestMethod("GET");
-            m_connection.addRequestProperty("X-Auth-Token",getString(R.string.api_key));
+            m_connection.addRequestProperty("X-Auth-Token",App.getContext().getString(R.string.api_key));
             m_connection.connect();
 
             // Read the input stream into a String
@@ -90,7 +91,7 @@ public class myFetchService extends IntentService
         }
         catch (Exception e)
         {
-            Log.e(LOG_TAG,this.getString(R.string.error_exception) + " " + e.getMessage());
+            Log.e(LOG_TAG,App.getContext().getString(R.string.error_exception) + " " + e.getMessage());
         }
         finally {
             if(m_connection != null)
@@ -104,18 +105,18 @@ public class myFetchService extends IntentService
                 }
                 catch (IOException e)
                 {
-                    Log.e(LOG_TAG,this.getString(R.string.error_closinstrream));
+                    Log.e(LOG_TAG,App.getContext().getString(R.string.error_closinstrream));
                 }
             }
         }
         try {
             if (JSON_data != null) {
                 //This bit is to check if the data contains any matches. If not, we call processJson on the dummy data
-                JSONArray matches = new JSONObject(JSON_data).getJSONArray(getString(R.string.fixtures));
+                JSONArray matches = new JSONObject(JSON_data).getJSONArray(App.getContext().getString(R.string.fixtures));
                 if (matches.length() == 0) {
                     //if there is no data, call the function on dummy data
                     //this is expected behavior during the off season.
-                    processJSONdata(getString(R.string.dummy_data), getApplicationContext(), false);
+                    processJSONdata(App.getContext().getString(R.string.dummy_data), getApplicationContext(), false);
                     return;
                 }
 
@@ -123,7 +124,7 @@ public class myFetchService extends IntentService
                 processJSONdata(JSON_data, getApplicationContext(), true);
             } else {
                 //Could not Connect
-                Log.d(LOG_TAG, getString(R.string.error_conneting));
+                Log.d(LOG_TAG, App.getContext().getString(R.string.error_conneting));
             }
         }
         catch(Exception e)
@@ -136,32 +137,32 @@ public class myFetchService extends IntentService
         //JSON data
         // This set of league codes is for the 2015/2016 season. In fall of 2016, they will need to
         // be updated. Feel free to use the codes
-        final String BUNDESLIGA1 = getString(R.string.league_BUNDESLIGA1);
-        final String BUNDESLIGA2 = getString(R.string.league_BUNDESLIGA2);
-        final String LIGUE1 = getString(R.string.league_LIGUE1);
-        final String LIGUE2 = getString(R.string.league_LIGUE2);
-        final String PREMIER_LEAGUE = getString(R.string.league_PREMIER_LEAGUE);
-        final String PRIMERA_DIVISION = getString(R.string.league_PRIMERA_DIVISION);
-        final String SEGUNDA_DIVISION = getString(R.string.league_SEGUNDA_DIVISION);
-        final String SERIE_A = getString(R.string.league_SERIE_A);
-        final String PRIMERA_LIGA =  getString(R.string.league_PRIMERA_LIGA);
-        final String Bundesliga3 = getString(R.string.league_Bundesliga3);
-        final String EREDIVISIE = getString(R.string.league_EREDIVISIE);
+        final String BUNDESLIGA1 = App.getContext().getString(R.string.league_BUNDESLIGA1);
+        final String BUNDESLIGA2 = App.getContext().getString(R.string.league_BUNDESLIGA2);
+        final String LIGUE1 = App.getContext().getString(R.string.league_LIGUE1);
+        final String LIGUE2 = App.getContext().getString(R.string.league_LIGUE2);
+        final String PREMIER_LEAGUE = App.getContext().getString(R.string.league_PREMIER_LEAGUE);
+        final String PRIMERA_DIVISION = App.getContext().getString(R.string.league_PRIMERA_DIVISION);
+        final String SEGUNDA_DIVISION = App.getContext().getString(R.string.league_SEGUNDA_DIVISION);
+        final String SERIE_A = App.getContext().getString(R.string.league_SERIE_A);
+        final String PRIMERA_LIGA =  App.getContext().getString(R.string.league_PRIMERA_LIGA);
+        final String Bundesliga3 = App.getContext().getString(R.string.league_Bundesliga3);
+        final String EREDIVISIE = App.getContext().getString(R.string.league_EREDIVISIE);
 
 
-        final String SEASON_LINK = getString(R.string.SEASON_LINK);
-        final String MATCH_LINK = getString(R.string.MATCH_LINK);
-        final String FIXTURES = getString(R.string.fixtures);
-        final String LINKS = getString(R.string.LINKS);
-        final String SOCCER_SEASON = getString(R.string.SOCCER_SEASON);
-        final String SELF = getString(R.string.SELF);
-        final String MATCH_DATE = getString(R.string.MATCH_DATE);
-        final String HOME_TEAM = getString(R.string.HOME_TEAM);
-        final String AWAY_TEAM = getString(R.string.AWAY_TEAM);
-        final String RESULT = getString(R.string.RESULT);
-        final String HOME_GOALS = getString(R.string.HOME_GOALS);
-        final String AWAY_GOALS = getString(R.string.AWAY_GOALS);
-        final String MATCH_DAY = getString(R.string.MATCH_DAY);
+        final String SEASON_LINK = App.getContext().getString(R.string.SEASON_LINK);
+        final String MATCH_LINK = App.getContext().getString(R.string.MATCH_LINK);
+        final String FIXTURES = App.getContext().getString(R.string.fixtures);
+        final String LINKS = App.getContext().getString(R.string.LINKS);
+        final String SOCCER_SEASON = App.getContext().getString(R.string.SOCCER_SEASON);
+        final String SELF = App.getContext().getString(R.string.SELF);
+        final String MATCH_DATE = App.getContext().getString(R.string.MATCH_DATE);
+        final String HOME_TEAM = App.getContext().getString(R.string.HOME_TEAM);
+        final String AWAY_TEAM = App.getContext().getString(R.string.AWAY_TEAM);
+        final String RESULT = App.getContext().getString(R.string.RESULT);
+        final String HOME_GOALS = App.getContext().getString(R.string.HOME_GOALS);
+        final String AWAY_GOALS = App.getContext().getString(R.string.AWAY_GOALS);
+        final String MATCH_DAY = App.getContext().getString(R.string.MATCH_DAY);
 
         //Match data
         String League = null;

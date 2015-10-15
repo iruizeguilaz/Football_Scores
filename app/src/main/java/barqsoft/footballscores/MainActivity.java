@@ -11,7 +11,7 @@ public class MainActivity extends ActionBarActivity
 {
     public static int selected_match_id;
     public static int current_fragment = 2;
-    public static String LOG_TAG = "MainActivity";
+    public final String LOG_TAG = MainActivity.class.getName();
     private final String save_tag = "Save Test";
     private PagerFragment my_main;
     @Override
@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity
     protected void onSaveInstanceState(Bundle outState)
     {
         Log.v(save_tag,"will save");
-        Log.v(save_tag,"fragment: "+getString(my_main.mPagerHandler.getCurrentItem()));
+        Log.v(save_tag,"fragment: "+my_main.mPagerHandler.getCurrentItem());
         Log.v(save_tag,"selected id: "+selected_match_id);
         outState.putInt("Pager_Current",my_main.mPagerHandler.getCurrentItem());
         outState.putInt("Selected_match",selected_match_id);

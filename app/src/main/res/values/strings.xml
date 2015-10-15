@@ -101,4 +101,10 @@
 
     <string name="FOOTBALL_SCORES_HASHTAG" translatable="false">#Football_Scores</string>
 
+
+
+
+    <string name="title_widget_todayscores">Today football scores</string>
+    <string name="data_not_found">No data avaible</string>
+
 </resources>

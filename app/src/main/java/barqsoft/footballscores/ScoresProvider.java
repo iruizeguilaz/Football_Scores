@@ -88,7 +88,7 @@ public class ScoresProvider extends ContentProvider
             case MATCHES_WITH_DATE:
                 return DatabaseContract.scores_table.CONTENT_TYPE;
             default:
-                throw new UnsupportedOperationException(getContext().getString(R.string.error_unkonw_uri) + " :" + uri );
+                throw new UnsupportedOperationException(App.getContext().getString(R.string.error_unkonw_uri) + " :" + uri );
         }
     }
 
@@ -114,7 +114,7 @@ public class ScoresProvider extends ContentProvider
             case MATCHES_WITH_LEAGUE: retCursor = mOpenHelper.getReadableDatabase().query(
                     DatabaseContract.SCORES_TABLE,
                     projection,SCORES_BY_LEAGUE,selectionArgs,null,null,sortOrder); break;
-            default: throw new UnsupportedOperationException(getContext().getString(R.string.error_unkonw_uri) + uri);
+            default: throw new UnsupportedOperationException(App.getContext().getString(R.string.error_unkonw_uri) + uri);
         }
         retCursor.setNotificationUri(getContext().getContentResolver(),uri);
         return retCursor;
