@@ -44,7 +44,7 @@
     </string>
 
     <string name="widget_text">This is a widget probably.</string>
-    <string name="api_key">8763b1818de1436ea41e1f68535be36b</string>
+    <string name="api_key"></string>
     <string name="dummy_data">{\"timeFrameStart\":\"2015-06-18\",\"timeFrameEnd\":\"2015-06-19\",\"count\":1,\"fixtures\":[{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}}]}</string>
 
     <string name="team_arsenal" translatable="false">Arsenal London FC</string>
@@ -99,11 +99,20 @@
     <string name="MATCH_DAY" translatable="false">matchday</string>
 
 
+    <string name="Save_Text" translatable="false">Save Test</string>
+    <string name="Pager_Current" translatable="false">Pager_Current</string>
+    <string name="Selected_match" translatable="false">Selected_match</string>
+    <string name="My_main" translatable="false">my_main</string>
+
+    <string name="league" translatable="false">league</string>
+    <string name="id" translatable="false">id</string>
+    <string name="date" translatable="false">date</string>
+
     <string name="FOOTBALL_SCORES_HASHTAG" translatable="false">#Football_Scores</string>
 
 
 
-
+    <string name="test_scorenull"  translatable="false"> - </string>
     <string name="title_widget_todayscores">Today football scores</string>
     <string name="data_not_found">No data avaible</string>
 

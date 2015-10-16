@@ -32,9 +32,9 @@ public class ScoresProvider extends ContentProvider
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
         final String authority = DatabaseContract.BASE_CONTENT_URI.toString();
         matcher.addURI(authority, null , MATCHES);
-        matcher.addURI(authority, "league" , MATCHES_WITH_LEAGUE);
-        matcher.addURI(authority, "id" , MATCHES_WITH_ID);
-        matcher.addURI(authority, "date" , MATCHES_WITH_DATE);
+        matcher.addURI(authority, App.getContext().getString(R.string.league), MATCHES_WITH_LEAGUE);
+        matcher.addURI(authority, App.getContext().getString(R.string.id) , MATCHES_WITH_ID);
+        matcher.addURI(authority, App.getContext().getString(R.string.date) , MATCHES_WITH_DATE);
         return matcher;
     }
 

@@ -1,70 +1,61 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingTop="5dp"
-    android:id="@+id/widget"
-    >
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/home_crest_widget"/>
+    android:weightSum="3"
+    android:id="@+id/linearlayaout_widget"
+    android:background="@color/white">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:textSize="@dimen/TeamNames"
-            android:gravity="center"
+            android:gravity="start|left"
             android:text="@string/test_text"
-            android:id="@+id/home_name_widget"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/test_text"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="@dimen/Score"
-            android:id="@+id/score_textview_widget"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/test_text"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:id="@+id/data_textview_widget"/>
+            android:id="@+id/home_name_widget"
+            android:textColor="@color/greydark"
+            android:paddingStart="1dp"
+            android:paddingLeft="1dp"/>
 
-    </LinearLayout>
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/away_crest_widget"/>
+        android:gravity="center|center_horizontal"
+        android:layout_weight="1" >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:text="@string/test_scorenull"
+            android:gravity="center|center_horizontal"
+            android:textSize="@dimen/Score"
+            android:id="@+id/score_textview_widget"
+            android:textColor="@color/purple01"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_text"
+            android:gravity="center|center_horizontal"
+            android:id="@+id/matchDate_textview_widget"
+            android:textColor="@color/green01"/>
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="120dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="right|end"
+            android:gravity="right|end"
             android:text="@string/test_text"
             android:textSize="@dimen/TeamNames"
-            android:id="@+id/away_name_widget"/>
-    </LinearLayout>
+            android:id="@+id/away_name_widget"
+            android:textColor="@color/greydark"
+            android:paddingEnd="1dp"
+            android:paddingRight="1dp"/>
+
 </LinearLayout>
